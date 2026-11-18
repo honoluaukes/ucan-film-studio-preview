@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>UCAN Film Studio · Walk in. Press record.</title>
-<meta name="description" content="A video podcast and content studio in Calgary. The room is lit, the mics are live, and you book it by the hour.">
+<meta name="description" content="A video podcast and content studio in Calgary. The room is lit, the mics are live, and we run the cameras. Three-camera recording from $150 an hour.">
 <meta name="robots" content="noindex">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%230D0A08'/><circle cx='16' cy='16' r='7' fill='%23D91F26'/></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -236,7 +236,22 @@
   .plan li { display: grid; grid-template-columns: 1.1rem 1fr; gap: .6rem; font-size: .96rem; align-items: start; }
   .plan li svg { width: .95rem; height: .95rem; margin-top: .22rem; stroke: var(--amber); fill: none; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
   .plan .btn { margin-top: auto; justify-content: center; }
-  .sample { display: inline-block; font-family: var(--mono); font-size: .7rem; letter-spacing: .06em; color: var(--amber); border: 1px dashed color-mix(in oklab, var(--amber) 55%, transparent); border-radius: 6px; padding: .35rem .6rem; margin-top: 1rem; }
+  .plan__price > span:first-child { font-size: .9rem; }
+  .live { display: flex; justify-content: space-between; align-items: center; gap: 1.5rem 3rem; margin-top: .75rem; padding: 1.4rem 1.4rem; }
+  .live h3 { font-family: var(--sc-font-display); font-stretch: 115%; font-weight: 800; text-transform: uppercase; font-size: 1.5rem; margin: .5rem 0 .4rem; }
+  .live p { max-width: 52ch; font-size: .96rem; }
+  .live .plan__price { margin: 0; flex: none; }
+  .rates { margin-top: .75rem; padding: 1.4rem 1.4rem .6rem; border-radius: 12px; box-shadow: inset 0 0 0 1px var(--line); }
+  .rates h3 { font-family: var(--mono); font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; color: var(--amber); margin: 0 0 .6rem; font-weight: 400; }
+  .rates dl { margin: 0; display: grid; grid-template-columns: 1fr 1fr; column-gap: clamp(1.5rem, 4vw, 4rem); }
+  .rates dl > div { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; padding: .8rem 0; border-top: 1px solid var(--line); }
+  .rates dt { font-size: .98rem; }
+  .rates dd { margin: 0; text-align: right; font-weight: 600; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .rates small { display: block; font-weight: 400; font-size: .8rem; color: var(--sc-ink-soft); white-space: normal; }
+  .founder { margin: 1.6rem 0 0; display: flex; align-items: center; gap: 1rem; }
+  .founder img { width: 9.5rem; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 10px; box-shadow: inset 0 0 0 1px var(--line); }
+  .founder figcaption { font-size: .9rem; color: var(--sc-ink-soft); }
+  .founder b { display: block; color: var(--sc-ink); font-weight: 600; font-size: 1rem; }
   .compare { margin: 1.25rem 0 0; color: var(--sc-ink-soft); font-size: .98rem; }
   .compare b { color: var(--sc-ink); font-weight: 600; }
 
@@ -292,6 +307,9 @@
     .kit { grid-template-columns: 1fr 1fr; }
     .kit__photo { grid-column: 1 / -1; grid-row: auto; aspect-ratio: 16 / 10; min-height: 0; }
     .steps, .plans, .proof { grid-template-columns: 1fr; }
+    .live { flex-direction: column; align-items: flex-start; }
+    .rates dl { grid-template-columns: 1fr; }
+    .rates dd { white-space: normal; }
     .plan--hot { order: -1; }
     .foot { justify-content: center; text-align: center; }
   }
@@ -333,10 +351,10 @@
       <div class="hero__plane hero__rig" aria-hidden="true"><img src="assets/rig.png" alt=""></div>
       <div class="hero__plane hero__floor" aria-hidden="true"></div>
       <div class="hero__copy">
-        <p>A video podcast studio in Calgary. The room is lit, the mics are live, and you book it by the hour.</p>
+        <p>A video podcast studio in Calgary. The room is lit, the mics are live, and we run the cameras.</p>
         <div class="hero__cta">
           <a class="btn" href="#book">Book a session</a>
-          <span class="hero__price">Self-serve from <b>$59 an hour</b></span>
+          <span class="hero__price">Three-camera recording from <b>$150 an hour</b></span>
         </div>
       </div>
     </div>
@@ -349,9 +367,8 @@
       <div class="vf">
         <div class="vf__dim" aria-hidden="true"></div>
         <div class="vf__frame">
-          <img src="assets/oncam.jpg" alt="What the camera sees: two hosts talking in the leather armchairs, the slat wall soft behind them.">
+          <img src="assets/oncam-real.jpg" alt="What the camera sees: UCAN Radio founder Dmytro Gospodinov in a leather armchair at a boom microphone, the slat wall soft behind him.">
           <div class="l3" aria-hidden="true"><i></i><div><strong>Your show here</strong><span>Episode 01 · Recorded at UCAN Film Studio</span></div></div>
-          <span class="ai-note" aria-hidden="true">SAMPLE FRAME</span>
         </div>
         <div class="vf__guides" aria-hidden="true"></div>
         <div class="vf__hud" aria-hidden="true">
@@ -364,28 +381,28 @@
       <div class="roll__copy">
         <div data-sc-cue="0 0.40 0">
           <h2 class="disp">This is the room.</h2>
-          <p>Lights up, mics live, cameras framed before you get here.</p>
+          <p>Lights up, mics live, three cameras framed before you get here.</p>
         </div>
         <div class="is-b" data-sc-cue="0.50 1 0.2 0.06">
           <h2 class="disp">This is what your audience sees.</h2>
-          <p>You didn't buy a camera or lose a day to setup.</p>
+          <p>You didn't buy a camera, learn a switcher or lose a day to setup.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- 3 · CHOOSING: the sets, pan -->
-  <section class="sets" id="sets" data-sc-act="pan" data-sc-span="4.2" data-sc-drift="#0D0A08">
+  <section class="sets" id="sets" data-sc-act="pan" data-sc-span="5.4" data-sc-drift="#0D0A08">
     <div data-sc-stage>
       <div class="rail" data-sc-pan="0.04">
         <div class="rail__lead">
           <h2 class="disp">One room. Set it up your way.</h2>
-          <p>Pick your seating and your backdrop when you book. Two of the setups:</p>
+          <p>Pick your seating and your backdrop when you book. Three of the setups:</p>
         </div>
 
         <article class="set">
           <figure>
-            <img src="assets/set-lounge.jpg" alt="The Lounge: two leather armchairs, boom microphones, a display screen and shelves on a walnut slat wall.">
+            <img src="assets/set-lounge-real.jpg" alt="The Lounge: two leather armchairs with boom microphones, a display screen and shelves on a walnut slat wall.">
             <figcaption>SETUP 01</figcaption>
           </figure>
           <div class="set__body">
@@ -402,16 +419,33 @@
 
         <article class="set">
           <figure>
-            <img src="assets/set-table.jpg" alt="The Round Table: a dark oval table with desk microphones, velvet curtains and trees lit red and blue.">
+            <img src="assets/set-table-real.jpg" alt="The Round Table: a dark oval table with desk microphones, a large screen behind it and trees lit red and blue.">
             <figcaption>SETUP 02</figcaption>
           </figure>
           <div class="set__body">
             <h3 class="disp">The Round Table</h3>
             <dl>
-              <div><dt>Seats</dt><dd>Up to four</dd></div>
-              <div><dt>Backdrop</dt><dd>Velvet curtains, display screen</dd></div>
+              <div><dt>Seats</dt><dd>Hosts across the table</dd></div>
+              <div><dt>Backdrop</dt><dd>Big screen, lamps, lit trees</dd></div>
               <div><dt>Light</dt><dd>Colour accents, your pick</dd></div>
-              <div><dt>Best for</dt><dd>Panels, co-hosted episodes</dd></div>
+              <div><dt>Best for</dt><dd>Co-hosted episodes, guest interviews</dd></div>
+            </dl>
+            <a class="btn btn--ghost btn--sm" href="#book">Book this setup</a>
+          </div>
+        </article>
+
+        <article class="set">
+          <figure>
+            <img src="assets/set-solo-real.jpg" alt="Solo to camera: Dmytro Gospodinov at a desk microphone, a neon sign and a warm-lit tree behind him.">
+            <figcaption>SETUP 03</figcaption>
+          </figure>
+          <div class="set__body">
+            <h3 class="disp">Solo to camera</h3>
+            <dl>
+              <div><dt>Seats</dt><dd>One, at the desk</dd></div>
+              <div><dt>Backdrop</dt><dd>Dark curtain, neon, lit trees</dd></div>
+              <div><dt>Light</dt><dd>Colour accents, your pick</dd></div>
+              <div><dt>Best for</dt><dd>Teleprompter pieces, vertical video</dd></div>
             </dl>
             <a class="btn btn--ghost btn--sm" href="#book">Book this setup</a>
           </div>
@@ -420,7 +454,7 @@
         <div class="rail__note">
           <div class="swatches" aria-hidden="true"><i style="background:#141110"></i><i style="background:#7A1418"></i><i style="background:#8A5A3A"></i><i style="background:#1E4E7A"></i></div>
           <h3 class="disp">More ways to dress it.</h3>
-          <p>Hang black or red velvet, or shoot against the slat wall. Put your logo on the screen. If you want a setup you don't see, ask us.</p>
+          <p>Change the colour of the lights. Put your logo on the screen behind you. If you want a setup you don't see, ask us.</p>
           <a class="btn btn--sm" href="#book">Book a session</a>
         </div>
       </div>
@@ -435,10 +469,10 @@
         <p>Bring a guest. We've plugged in the rest.</p>
       </div>
       <div class="kit" data-sc-in data-sc-stagger="45">
-        <figure class="kit__photo"><img src="assets/kit-wall.jpg" alt="The control desk: audio mixer, monitor, headphones, a gimbal and a teleprompter on a reclaimed wood wall."></figure>
+        <figure class="kit__photo"><img src="assets/kit-desk-real.jpg" alt="The control desk: audio mixer, monitor, headphones, a gimbal, a teleprompter and a lit makeup mirror on a reclaimed wood wall."></figure>
         <div class="card"><span class="tick"><svg viewBox="0 0 12 12"><path d="M2 6.5l2.6 2.6L10 3.5"/></svg></span>
           <svg class="ic" viewBox="0 0 32 32"><rect x="4" y="10" width="17" height="13" rx="2"/><path d="M21 14l7-3.5v12L21 19"/><circle cx="9" cy="14.5" r="1"/></svg>
-          <h3>Cameras, framed</h3><p>On tripods, pointed at your seat.</p></div>
+          <h3>Three cameras</h3><p>On tripods, framed on your seats.</p></div>
         <div class="card"><span class="tick"><svg viewBox="0 0 12 12"><path d="M2 6.5l2.6 2.6L10 3.5"/></svg></span>
           <svg class="ic" viewBox="0 0 32 32"><rect x="5" y="6" width="22" height="15" rx="2"/><path d="M10 11h12M10 15h8M12 26h8M16 21v5"/></svg>
           <h3>Teleprompter</h3><p>Read your script straight to the lens.</p></div>
@@ -456,7 +490,7 @@
           <h3>Makeup mirror</h3><p>A lit mirror for the last look.</p></div>
         <div class="card"><span class="tick"><svg viewBox="0 0 12 12"><path d="M2 6.5l2.6 2.6L10 3.5"/></svg></span>
           <svg class="ic" viewBox="0 0 32 32"><path d="M8 5v22M16 5v22M24 5v22"/><rect x="5.5" y="9" width="5" height="4" rx="1"/><rect x="13.5" y="18" width="5" height="4" rx="1"/><rect x="21.5" y="12" width="5" height="4" rx="1"/></svg>
-          <h3>Control desk</h3><p>Audio mixer and headphones.</p></div>
+          <h3>Operator at the desk</h3><p>Someone runs cameras and sound for you.</p></div>
         <div class="card"><span class="tick"><svg viewBox="0 0 12 12"><path d="M2 6.5l2.6 2.6L10 3.5"/></svg></span>
           <svg class="ic" viewBox="0 0 32 32"><rect x="11" y="4" width="12" height="9" rx="1.5"/><path d="M17 13v4a4 4 0 01-4 4h-2M11 17v11M8 28h6"/></svg>
           <h3>Gimbal</h3><p>For moving shots and short-form clips.</p></div>
@@ -468,66 +502,91 @@
   <section class="flow" id="pricing" data-sc-drift="#100C09">
     <div class="sc-wrap">
       <div class="head" data-sc-in>
-        <h2 class="disp">Book an hour. Leave with a show.</h2>
-        <div>
-          <p>You see the price before you ask.</p>
-          <span class="sample">SAMPLE PRICES FOR THIS MOCKUP</span>
-        </div>
+        <h2 class="disp">Book a session. We run the cameras.</h2>
+        <p>Every rate is on this page. Custom work gets a written quote first.</p>
       </div>
       <div class="steps" data-sc-in data-sc-stagger="60">
-        <div class="step"><div><b>Pick a setup and a time</b><span>Live calendar, booked in a minute.</span></div></div>
-        <div class="step"><div><b>Walk in</b><span>The set is lit and the mics are on.</span></div></div>
-        <div class="step"><div><b>Leave with your footage</b><span>Files in hand the same day.</span></div></div>
+        <div class="step"><div><b>Pick a setup and a time</b><span>Two-hour minimum on most sessions.</span></div></div>
+        <div class="step"><div><b>Walk in</b><span>The set is lit and we run the cameras.</span></div></div>
+        <div class="step"><div><b>Get your files</b><span>Raw footage, or a finished episode.</span></div></div>
       </div>
       <div class="plans" data-sc-in data-sc-stagger="70">
         <article class="card plan">
-          <span class="plan__tag">You run it</span>
-          <h3>Self-serve</h3>
-          <div class="plan__price"><strong>$59</strong><span>an hour</span></div>
+          <span class="plan__tag">Record</span>
+          <h3>Three-camera recording</h3>
+          <div class="plan__price"><strong>$150</strong><span>an hour</span></div>
           <ul>
-            <li><svg viewBox="0 0 12 12"><path d="M2 6.5l2.6 2.6L10 3.5"/></svg>Your setup, ready when you arrive</li>
-            <li><svg viewBox="0 0 12 12"><path d="M2 6.5l2.6 2.6L10 3.5"/></svg>Cameras, mics and lights</li>
-            <li><svg viewBox="0 0 12 12"><path d="M2 6.5l2.6 2.6L10 3.5"/></svg>Teleprompter</li>
-            <li><svg viewBox="0 0 12 12"><path d="M2 6.5l2.6 2.6L10 3.5"/></svg>Quick walkthrough on arrival</li>
+            <li><svg viewBox="0 0 12 12"><path d="M2 6.5l2.6 2.6L10 3.5"/></svg>Three cameras, lights and mics</li>
+            <li><svg viewBox="0 0 12 12"><path d="M2 6.5l2.6 2.6L10 3.5"/></svg>An operator runs the session</li>
+            <li><svg viewBox="0 0 12 12"><path d="M2 6.5l2.6 2.6L10 3.5"/></svg>Recorded source files included</li>
+            <li><svg viewBox="0 0 12 12"><path d="M2 6.5l2.6 2.6L10 3.5"/></svg>Two-hour minimum</li>
           </ul>
           <a class="btn btn--ghost" href="#book">Book a session</a>
         </article>
         <article class="card plan plan--hot">
-          <span class="plan__tag">We run it</span>
-          <h3>With an operator</h3>
-          <div class="plan__price"><strong>$95</strong><span>an hour</span></div>
+          <span class="plan__tag">Record + edit</span>
+          <h3>Podcast production</h3>
+          <div class="plan__price"><span>from</span><strong>$450</strong><span>an episode</span></div>
           <ul>
-            <li><svg viewBox="0 0 12 12"><path d="M2 6.5l2.6 2.6L10 3.5"/></svg>The full Self-serve kit</li>
-            <li><svg viewBox="0 0 12 12"><path d="M2 6.5l2.6 2.6L10 3.5"/></svg>Someone runs cameras and sound</li>
-            <li><svg viewBox="0 0 12 12"><path d="M2 6.5l2.6 2.6L10 3.5"/></svg>Live switching between angles</li>
-            <li><svg viewBox="0 0 12 12"><path d="M2 6.5l2.6 2.6L10 3.5"/></svg>You do the talking</li>
+            <li><svg viewBox="0 0 12 12"><path d="M2 6.5l2.6 2.6L10 3.5"/></svg>Two hours of three-camera recording</li>
+            <li><svg viewBox="0 0 12 12"><path d="M2 6.5l2.6 2.6L10 3.5"/></svg>One finished episode, cut between angles</li>
+            <li><svg viewBox="0 0 12 12"><path d="M2 6.5l2.6 2.6L10 3.5"/></svg>Audio levelled</li>
+            <li><svg viewBox="0 0 12 12"><path d="M2 6.5l2.6 2.6L10 3.5"/></svg>Length and scope confirmed when you book</li>
           </ul>
           <a class="btn" href="#book">Book a session</a>
         </article>
         <article class="card plan">
-          <span class="plan__tag">Add to any session</span>
-          <h3>Editing</h3>
-          <div class="plan__price"><strong>$149</strong><span>an episode</span></div>
+          <span class="plan__tag">We run your channel</span>
+          <h3>YouTube production</h3>
+          <div class="plan__price"><span>from</span><strong>$3,500</strong><span>a month</span></div>
           <ul>
-            <li><svg viewBox="0 0 12 12"><path d="M2 6.5l2.6 2.6L10 3.5"/></svg>Full episode, cut and colour graded</li>
-            <li><svg viewBox="0 0 12 12"><path d="M2 6.5l2.6 2.6L10 3.5"/></svg>Clean audio</li>
-            <li><svg viewBox="0 0 12 12"><path d="M2 6.5l2.6 2.6L10 3.5"/></svg>Three vertical clips for social</li>
-            <li><svg viewBox="0 0 12 12"><path d="M2 6.5l2.6 2.6L10 3.5"/></svg>Ready to upload</li>
+            <li><svg viewBox="0 0 12 12"><path d="M2 6.5l2.6 2.6L10 3.5"/></svg>4 long videos a month</li>
+            <li><svg viewBox="0 0 12 12"><path d="M2 6.5l2.6 2.6L10 3.5"/></svg>Up to 20 vertical clips</li>
+            <li><svg viewBox="0 0 12 12"><path d="M2 6.5l2.6 2.6L10 3.5"/></svg>Up to 2 recording days, 8 hours each</li>
+            <li><svg viewBox="0 0 12 12"><path d="M2 6.5l2.6 2.6L10 3.5"/></svg>Thumbnails, titles and uploads</li>
+            <li><svg viewBox="0 0 12 12"><path d="M2 6.5l2.6 2.6L10 3.5"/></svg>Channel admin and performance review</li>
+            <li><svg viewBox="0 0 12 12"><path d="M2 6.5l2.6 2.6L10 3.5"/></svg>6-month minimum</li>
           </ul>
-          <a class="btn btn--ghost" href="#book">Book a session</a>
+          <a class="btn btn--ghost" href="#book">Get a quote</a>
         </article>
       </div>
-      <p class="compare" data-sc-in>Other Calgary studios charge <b>$100 to $175 an hour</b>. Most don't list a price.</p>
+
+      <div class="card live" data-sc-in>
+        <div>
+          <span class="plan__tag">Fastest turnaround</span>
+          <h3>Live editing</h3>
+          <p>We switch between the three cameras live while you record. You get one switched, ready-to-publish video after basic checks. Captions, B-roll and graphics are quoted separately.</p>
+        </div>
+        <div class="plan__price"><strong>$250</strong><span>an hour</span></div>
+      </div>
+
+      <div class="rates" data-sc-in>
+        <h3>Everything else</h3>
+        <dl>
+          <div><dt>One camera with teleprompter</dt><dd>$120 an hour <small>$100 from the third hour</small></dd></div>
+          <div><dt>Vertical video recording</dt><dd>$120 an hour <small>$100 from the third hour</small></dd></div>
+          <div><dt>Full day, three cameras</dt><dd>$1,050 for 8 hours <small>$1,300 for 10</small></dd></div>
+          <div><dt>Live stream, one camera</dt><dd>$250 an hour <small>2-hour minimum, one platform</small></dd></div>
+          <div><dt>Live stream, three cameras</dt><dd>$400 an hour <small>2-hour minimum, one platform</small></dd></div>
+          <div><dt>Edit, one-camera episode</dt><dd>from $100</dd></div>
+          <div><dt>Edit, three-camera episode</dt><dd>from $150</dd></div>
+          <div><dt>Studio membership</dt><dd>$540 a month <small>4 hours of three-camera recording, subject to availability</small></dd></div>
+          <div><dt>Captions, B-roll, graphics</dt><dd>Quoted per project</dd></div>
+          <div><dt>New YouTube channel setup</dt><dd>Quoted per project</dd></div>
+        </dl>
+      </div>
+      <p class="compare" data-sc-in>Prices in Canadian dollars, before GST.</p>
 
       <!-- 6 · TRUST -->
       <div class="proof" style="margin-top: clamp(3rem, 6vw, 6rem)">
         <div data-sc-in>
           <h2 class="disp">Run by the team behind UCAN Radio.</h2>
-          <p>UCAN Radio broadcasts from Calgary to listeners across Canada. The same crew built this room for their own shows, and now they rent it to you.</p>
+          <p>UCAN Radio broadcasts from Calgary to listeners across Canada. The same crew built this room for their own shows, and now they run it for yours.</p>
+          <figure class="founder"><img src="assets/founder-real.jpg" alt="Dmytro Gospodinov at the Round Table, the UCAN Radio logo on the screen behind him."><figcaption><b>Dmytro Gospodinov</b>Founder, UCAN Radio</figcaption></figure>
         </div>
         <div class="nums" data-sc-in data-sc-stagger="80">
           <div class="card num"><strong><span data-sc-count="0 13.5">13.5</span>K</strong><span>YouTube subscribers</span></div>
-          <div class="card num"><strong><span data-sc-count="0 3,400">3,400</span>+</strong><span>videos published</span></div>
+          <div class="card num"><strong><span data-sc-count="0 3,400">3,400</span></strong><span>videos published</span></div>
         </div>
       </div>
     </div>
@@ -536,16 +595,16 @@
   <!-- 7 · DECIDED: close -->
   <section class="close" id="book" data-sc-act="pin" data-sc-span="1.25" data-sc-drift="#070504">
     <div data-sc-stage>
-      <div class="close__bg"><img src="assets/set-table.jpg" alt=""></div>
+      <div class="close__bg"><img src="assets/close-table-real.jpg" alt=""></div>
       <div class="close__inner">
-        <h2 class="disp" data-sc-cue="0 1 0 0">Pick an hour. We'll light the room.</h2>
+        <h2 class="disp" data-sc-cue="0 1 0 0">Pick a time. We'll light the room.</h2>
         <p data-sc-cue="0 1 0 0">Tell us the setup you want and show up with something to say.</p>
-        <a class="btn" href="#book" data-sc-magnet="0.24">Book a session</a>
+        <div class="hero__cta" style="justify-content:center"><a class="btn" href="#book" data-sc-magnet="0.24">Book a session</a><a class="btn btn--ghost" href="#book">Get a quote</a></div>
       </div>
       <footer class="foot">
         <span>UCAN Film Studio · Calgary, Alberta</span>
         <span>From the team behind UCAN Radio</span>
-        <span>Concept mockup, November 2026</span>
+        <span>Preview, November 2026</span>
       </footer>
     </div>
   </section>
